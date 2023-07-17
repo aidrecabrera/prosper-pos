@@ -3,8 +3,8 @@ export default function Order() {
     <>
       <div className="flex justify-center pt-3 pb-3">
         <button
-          className="bg-slate-700 w-full h-14 rounded-lg"
-          onClick={() => console.log("hello world")}
+          className="bg-white text-slate-950 font-bold w-full h-12 rounded-xl"
+          onClick={() => alert("Success!")}
         >
           ORDER
         </button>
