@@ -1,6 +1,9 @@
 import ItemListComponent from "./itemlist";
 import ItemListHeaderComponent from "./itemlistheader";
+import GetItems from "../api/getitems";
+
 export default function Dashboard() {
+  const displayScannedItems = GetItems();
   return (
     <>
       <div className="h-[7%] flex flex-row gap-3">
@@ -18,12 +21,21 @@ export default function Dashboard() {
       {/* Dashboard Area */}
       <div className="h-[93%]">
         <ItemListHeaderComponent />
-        <ItemListComponent
-          product={"100124005"}
-          description={"Quaker Oats"}
-          quantity={2}
-          price={250}
-        />
+        <div className="h-[88%]">
+          <div className="overflow-y-auto h-full" style={{ maxHeight: "100%" }}>
+            {displayScannedItems.map((item, index) => {
+              return (
+                <ItemListComponent
+                  key={index}
+                  product={item.Product + "" + index}
+                  description={item.Description}
+                  quantity={item.Quantity}
+                  price={item.Price}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
     </>
   );

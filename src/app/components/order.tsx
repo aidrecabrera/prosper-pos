@@ -9,6 +9,14 @@ export default function Order() {
           ORDER
         </button>
       </div>
+      <div className="flex justify-center pt-3 pb-3">
+        <button
+          className="bg-white text-slate-950 font-bold w-full h-12 rounded-xl"
+          onClick={() => alert("Success!")}
+        >
+          TEST
+        </button>
+      </div>
     </>
   );
 }
