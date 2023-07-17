@@ -1,4 +1,14 @@
+import React from "react";
+import GetItems, { addItem } from "../api/getitems";
+
 export default function Order() {
+  const arrayOfItems = GetItems();
+
+  const handleTestButtonClick = () => {
+    addItem(arrayOfItems);
+    console.log(arrayOfItems); // Updated array with the new item
+  };
+
   return (
     <>
       <div className="flex justify-center pt-3 pb-3">
@@ -12,7 +22,7 @@ export default function Order() {
       <div className="flex justify-center pt-3 pb-3">
         <button
           className="bg-white text-slate-950 font-bold w-full h-12 rounded-xl"
-          onClick={() => alert("Success!")}
+          onClick={handleTestButtonClick}
         >
           TEST
         </button>
