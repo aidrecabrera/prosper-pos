@@ -1,3 +1,5 @@
+import ItemListComponent from "./itemlist";
+import ItemListHeaderComponent from "./itemlistheader";
 export default function Dashboard() {
   return (
     <>
@@ -5,15 +7,24 @@ export default function Dashboard() {
         <form className="w-11/12 ">
           <input
             type="text"
-            className="rounded-xl w-full h-full text-gray tracking-wide text-sm p-5 bg-[#282C2C]"
+            className="appearance-none outline-none rounded-xl w-full h-full text-gray tracking-wide text-sm p-5 bg-[#282C2C]"
             placeholder="Search SKU..."
           />
         </form>
-        <div className="w-1/12 rounded-xl items-center text-center border flex justify-center">
-          <h1>Scan</h1>
-        </div>
+        <button className="bg-white text-black w-1/12 rounded-xl items-center text-center flex justify-center">
+          Scan
+        </button>
       </div>
-      <div className="h-[93%] border rounded-xl"></div>
+      {/* Dashboard Area */}
+      <div className="h-[93%]">
+        <ItemListHeaderComponent />
+        <ItemListComponent
+          product={"100124005"}
+          description={"Quaker Oats"}
+          quantity={2}
+          price={250}
+        />
+      </div>
     </>
   );
 }
