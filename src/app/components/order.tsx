@@ -1,11 +1,10 @@
 import React from "react";
-import GetItems, { addItem } from "../api/getitems";
+import GetItems from "../api/getitems";
 
 export default function Order() {
   const arrayOfItems = GetItems();
 
   const handleTestButtonClick = () => {
-    addItem(arrayOfItems);
     console.log(arrayOfItems); // Updated array with the new item
   };
 
